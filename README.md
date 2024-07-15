@@ -98,5 +98,5 @@
 
 ## SCREENSHOTS
 
-![Screenshot](https://imgur.com/a/9yBr4iU)
-![Screenshot](https://imgur.com/a/VYnr5lF)
+![Screenshot](https://i.imgur.com/frty1ml.png)
+![Screenshot](https://i.imgur.com/o5IXCQW.png)
