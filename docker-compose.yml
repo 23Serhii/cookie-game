@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb+srv://uantredogbusiness:tmxn6w3t1@cluster0.yh1crzq.mongodb.net/cookies-game
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5000:5000"
