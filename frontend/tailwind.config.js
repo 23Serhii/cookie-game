@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'cookies-background': "url('/public/background.png')",
+        'cookies-background': "url('./public/background.png')",
       }
     },
   },

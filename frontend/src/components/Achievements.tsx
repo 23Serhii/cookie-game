@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useCookies } from '../context/CookieContext';
+import '../styles/Achievements.css';
 
 const Achievements: React.FC = () => {
   const { cookies } = useCookies();

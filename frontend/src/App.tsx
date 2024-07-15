@@ -7,7 +7,7 @@ import UpgradeButton from './components/UpgradeButton';
 import Achievements from './components/Achievements';
 import ProgressBar from './components/ProgressBar';
 import ResetButton from './components/ResetButton';
-import './App.css';
+import '../src/styles/App.css';
 
 const App: React.FC = () => {
   return (

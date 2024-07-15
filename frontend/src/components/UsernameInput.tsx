@@ -13,7 +13,7 @@ const UsernameInput: React.FC = () => {
     }
   };
 
-  if (username) return null; // Якщо ім'я користувача вже встановлено, не показуємо форму
+  if (username) return null; 
 
   return (
     <form onSubmit={handleSubmit} className="mb-4">
