@@ -1,37 +1,31 @@
-.achievement-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .achievement-item {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f3f4f6;
-    border: 1px solid #d1d5db;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s, opacity 0.5s;
-    opacity: 1;
-  }
-  
-  .fade-enter {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  
-  .fade-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .fade-exit {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .fade-exit-active {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  
+.achievement-notification {
+  background-color: #4caf50; 
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #388e3c; 
+  text-align: center;
+  opacity: 0.9;
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translate(-20px, -20px); /* Початкове положення: лівий верхній кут */
+}
+
+.fade-enter-active {
+  opacity: 0.9;
+  transform: translate(0, 0); /* Кінцеве положення: відсутність зміщення */
+}
+
+.fade-exit {
+  opacity: 0.9;
+  transform: translate(0, 0); /* Початкове положення: відсутність зміщення */
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translate(-20px, -20px); /* Кінцеве положення: лівий верхній кут */
+}

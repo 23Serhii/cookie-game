@@ -1,38 +1,29 @@
+from bson.objectid import ObjectId
 from . import mongo
-from bson import ObjectId
 
-def get_user_data():
-    user_data = mongo.db.cookies.find_one()
-    if not user_data:
-        user_data = {"cookies": 0, "level": 1}
-        mongo.db.cookies.insert_one(user_data)
-    user_data["_id"] = str(user_data["_id"])
-    return user_data
+def create_user(username):
+    user = mongo.db.users.insert_one({'username': username, 'cookies': 0, 'level': 1})
+    return str(user.inserted_id)
 
-def add_cookie():
-    mongo.db.cookies.update_one({}, {'$inc': {'cookies': 1}}, upsert=True)
-    user_data = get_user_data()
-    user_data["_id"] = str(user_data["_id"])
-    return user_data
+def update_cookies(user_id, cookies):
+    mongo.db.users.update_one({'_id': ObjectId(user_id)}, {'$set': {'cookies': cookies}})
 
-def get_level(cookies):
-    return cookies // 100 + 1
+def get_user_data(user_id):
+    user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+    return user
 
-def buy_upgrade(upgrade_cost):
-    user_data = get_user_data()
-    if user_data['cookies'] >= upgrade_cost:
-        mongo.db.cookies.update_one({}, {'$inc': {'cookies': -upgrade_cost}}, upsert=True)
-        return {"status": "success"}
-    return {"status": "fail", "message": "Not enough cookies"}
+def add_cookie(user_id, cookies):
+    mongo.db.users.update_one({'_id': ObjectId(user_id)}, {'$inc': {'cookies': cookies}})
 
-def get_achievements(cookies):
-    achievements = []
-    if cookies >= 10:
-        achievements.append("Collected 10 cookies!")
-    if cookies >= 50:
-        achievements.append("Collected 50 cookies!")
-    if cookies >= 100:
-        achievements.append("Collected 100 cookies!")
-    if cookies >= 1000:
-        achievements.append("Collected 1000 cookies!")
-    return achievements
+def buy_upgrade(user_id):
+    user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+    level = user['level'] + 1
+    mongo.db.users.update_one({'_id': ObjectId(user_id)}, {'$set': {'level': level}})
+
+def get_level(user_id):
+    user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+    return user['level']
+
+def get_achievements(user_id):
+    user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+    return user.get('achievements', [])

@@ -21,14 +21,22 @@ a {
 a:hover {
   color: #535bf2;
 }
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-image: url('./assets/background.jpg'); /* Вказуємо шлях до фотографії */
+  background-size: cover; /* Забезпечуємо, щоб зображення покривало всю сторінку */
+  background-position: center; /* Центруємо зображення */
+  background-repeat: no-repeat; /* Зображення не повторюється */
+  background-attachment: fixed; /* Фіксуємо фон */
+  min-height: 100vh; /* Встановлюємо мінімальну висоту на всю висоту вікна */
+  width: 100vw; /* Встановлюємо ширину на всю ширину вікна */
+  overflow: hidden; /* Приховуємо прокрутку, якщо вона не потрібна */
 }
+
+
+
 
 h1 {
   font-size: 3.2em;

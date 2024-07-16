@@ -1,0 +1,55 @@
+.energy-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem; /* Відступ праворуч для розташування біля головної кнопки */
+}
+
+.energy-bar-label {
+  margin-bottom: 0.5rem; /* Відступ між підписом і енергієюбаром */
+  font-size: 1rem; /* Розмір шрифту для підпису */
+  color: #007bff; /* Колір тексту */
+}
+
+.energy-bar-container {
+  position: relative;
+  width: 1.5rem; /* Зменшено ширину для вертикальної орієнтації */
+  height: 150px; /* Висота енергіїбару */
+  background-color: #d1e7dd;
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.energy-bar {
+  background-color: #efff0f;
+  width: 100%; /* Повна ширина контейнера */
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.energy-bar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 123, 255, 0.5), rgba(0, 255, 255, 0.5), rgba(0, 123, 255, 0.5));
+  filter: blur(5px);
+  border-radius: 9999px;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

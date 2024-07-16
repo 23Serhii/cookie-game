@@ -1,0 +1,23 @@
+.inventory-container {
+    margin-top: 1rem;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .inventory-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .inventory-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .inventory-container li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+  }
+  

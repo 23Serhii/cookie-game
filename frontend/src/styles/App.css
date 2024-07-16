@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
 }
 
 .logo {
@@ -27,6 +28,32 @@
   }
 }
 
+
+.text-red-500 {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.text-red-500.hidden {
+  opacity: 0;
+}
+
+
+.button-container :focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -41,15 +68,64 @@
   color: #888;
 }
 
-/* Новий код для відступів між кнопками */
-.button-container {
+
+
+
+.achievements-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+}
+
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Розташування елементів зверху */
+  height: 100vh; /* Висота контейнера */
+  padding: 1rem;
 }
 
-.button-container button {
-  margin-top: 1rem; /* Відступ між кнопками */
+
+.level-container {
+  margin-bottom: 1rem; /* Відступ між компонентами */
 }
+
+.energy-bar {
+  margin-right: 2rem; /* Відступ праворуч для коригування положення */
+}
+
+.main-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрування основних елементів */
+  margin-bottom: 1rem; /* Відступ знизу для розділення з іншими елементами */
+}
+
+.energy-bar-position {
+  margin-right: 2rem; /* Відступ праворуч для коригування положення */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрування кнопок */
+  gap: 1rem; /* Відступ між кнопками */
+  margin-top: 1rem; /* Відступ зверху для розділення з іншими елементами */
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 
 

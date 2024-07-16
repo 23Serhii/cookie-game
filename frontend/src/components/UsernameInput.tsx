@@ -2,30 +2,26 @@ import React, { useState } from 'react';
 import { useCookies } from '../context/CookieContext';
 
 const UsernameInput: React.FC = () => {
-  const [inputValue, setInputValue] = useState('');
-  const { setUsername, username } = useCookies();
+  const [username, setUsername] = useState('');
+  const { setUsername: saveUsername } = useCookies();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (inputValue.trim()) {
-      setUsername(inputValue.trim());
-      setInputValue('');
-    }
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    saveUsername(username);
   };
 
-  if (username) return null; 
-
   return (
-    <form onSubmit={handleSubmit} className="mb-4">
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+    <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4">
+      <input 
+        type="text" 
+        value={username} 
+        onChange={(e) => setUsername(e.target.value)} 
+        className="border-2 border-gray-300 p-2 rounded"
         placeholder="Enter your username"
-        className="p-2 border border-gray-300 rounded"
+        required
       />
-      <button type="submit" className="ml-2 p-2 bg-blue-500 text-white rounded">
-        Submit
+      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+        Start Game
       </button>
     </form>
   );

@@ -1,0 +1,43 @@
+.progress-bar-container {
+  position: relative;
+  width: 80%; /* Встановіть бажану ширину */
+  max-width: 600px; /* Максимальна ширина для великих екранів */
+  background-color: #edf2f7; /* Світло-сірий фон */
+  border-radius: 9999px; /* Закруглені краї */
+  height: 1rem; /* Висота прогресбару */
+  margin: 1rem auto; /* Відступи зверху і знизу, центрування контейнера */
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Тінь зі свіченням */
+}
+
+.progress-bar {
+  background-color: #ff9500; /* Оранжевий колір заповнення */
+  height: 100%; /* Повна висота контейнера */
+  border-radius: 9999px; /* Закруглені краї */
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 69, 0, 0.5), rgba(255, 165, 0, 0.5), rgba(255, 69, 0, 0.5));
+  filter: blur(5px);
+  border-radius: 9999px;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

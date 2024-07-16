@@ -1,0 +1,49 @@
+.cookie-button-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cookie-button {
+    background-color: transparent; 
+    color: white;
+    padding: 0; 
+    border-radius: 100%;
+    font-size: 14rem; 
+    width: 200px; 
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-in-out;
+    line-height: 1; 
+    position: relative;
+    overflow: hidden; 
+    border: none;
+     z-index: 1; 
+  }
+  
+  .cookie-button:active {
+    transform: scale(0.9);
+  }
+  
+  .click-anim {
+    position: absolute;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    animation: pop 1s forwards;
+    pointer-events: none; 
+    z-index: 2; 
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+  }
+  
